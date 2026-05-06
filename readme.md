@@ -108,3 +108,271 @@ console.log(frutas) // Output: ["frutilla"]
 ```
 
 ---
+
+## Funciones
+
+---
+## Funcion declarativa
+Forma clasica de crear una funcion 
+
+```js
+function generarNumeroAleatorio(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+console.log(generarNumeroAleatorio(1, 100));
+```
+
+## Funcion expresada
+
+```js
+const numAzar = function (min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+const num = numAzar(1, 100);
+console.log(num);
+```
+
+__Diferencia entre declarativa vs expresada__ -> Javascript lee de arriba hacia abajo antes de ejercutarse el navegador lo lee y despues que lo lee toda funcion que sea declarada lo tira para arriba, en cambio una funcion expresada no sirve 
+
+## Funciones flecha 
+Una expresion de funcion flecha es una alternativa compacta a una expresion de funcion tradicional 
+
+```js
+const numeroAleatorio = (min, max) => {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+console.log(numeroAleatorio(1, 100));
+```
+
+Una forma mas reducida es si estamos retornando algo sacar las llaves y el return ya que las funciones de flema son implicitas 
+
+```js
+const numeroAleatorio = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+console.log(numeroAleatorio(1, 100));
+```
+## Arrow y ForEach
+ForEach es una forma de recorrer un array (una lista) y hacer algo con cada elemento, y
+tambien podemos obtener su indice 
+
+```js
+const frutas = ['banana', 'maçã', 'laranja', 'uva', 'abacaxi'];
+frutas.forEach((fruta, index) => console.log(fruta, index))
+```
+
+---
+
+## Objetos 
+
+---
+## Objetos literal 
+Se denomina objeto literal al objeto cuyas propiedades estan decladas textualmente en el codigo 
+
+```js
+const gato = {
+    nome: "Mingau",
+    edad: 3,
+    raza: "Siames",
+    enemigos: ["perros", "agua", "aspiradoras"],
+    duerme: true
+}
+console.log(gato.name) // Primera forma de llamar una propiedad
+console.log(gato["name"]) // segunda forma de llamar una propiedad
+```
+
+## Crud propiedades
+__Crear una propiedad__ 
+ ```js  
+gato.color = "negro"
+```
+__Leer__ 
+```js 
+console.log(gato)
+```
+__Actualizar propiedad__
+```js 
+gato.edad = 11
+```
+__Eliminar propiedad__
+```js 
+delete gato.duerme
+```
+
+## HasOwnProperty
+A veces es util comprobar si existe o no la propiedad de un objeto dado. Podemos utilizar el metodo .hasOwnProperty(propername) para determinar si un objeto tiene una propiedad con ese nombre .hasOwnProperty() devuelve __true__ o __false__ si se encuentra la propiedad o no.
+
+```js 
+const gato = {
+    nome: "Mingau",
+    edad: 3,
+    raza: "Siames",
+    enemigos: ["perros", "agua", "aspiradoras"],
+    duerme: true
+}
+
+console.log(hasOwnProperty.call(gato, "nome")); // true | se puede definir asi
+console.log(gato.hasOwnProperty("rezar")); // false | o se puede definir asi
+```
+
+## Encamidenamiento opcional 
+El operador de encadenamiento opcional ? permite leer el valor de una propiedad ubicada dentro de una cadena de objetos conectados sin tener que validar expresamente que cada referencia en la cadena sea valida
+
+```js 
+const gato = {
+    nome: "Mingau",
+    edad: 3,
+    raza: "Siames",
+    enemigos: ["perros", "agua", "aspiradoras"],
+    duerme: true
+}
+
+console.log(gato?.color); // como no existe da undefined
+```
+## Arrow function en propiedades y funciones comunes
+En funciones comunes podemos acceder con this a propiedades de nuestro objetos, pero con arrows functions ya no
+
+```js 
+const gato = {
+    nome: "Mingau",
+    edad: 3,
+    raza: "Siames",
+    enemigos: ["perros", "agua", "aspiradoras"],
+    duerme: true,
+    comer(){
+        console.log(`${this.nome} está comiendo.`); // Aquí, `this.nome` se refiere a la propiedad `nome` del objeto `gato.
+    },
+    comiendo2: () => {
+        console.log(`${this.nome} está comiendo.`); // Aquí, `this.nome` no se refiere a la propiedad `nome` del objeto `gato`, sino que se refiere al contexto global (window en navegadores), lo que resultará en `undefined`.
+    }
+}
+
+```
+
+## Recorrer un objeto for in 
+Es la instruccion for-in itera sobre todas las propiedades enumerables de un objeto que esta codificado por cadenas
+
+```js 
+const gato = {
+    nome: "Mingau",
+    edad: 3,
+    raza: "Siames",
+    enemigos: ["perros", "agua", "aspiradoras"],
+}
+
+for(let propiedad in gato) {
+    console.log(propiedad);
+    console.log(gato[propiedad]); 
+}
+
+```
+## Object.value 
+object.value devuelve un array con los valores correspondientes a las propiedades enumerables de un objeto 
+
+```js 
+console.log(Object.values(gato))
+Object.values(gato).forEach((item) => {
+    console.log(item)
+})
+
+```
+## Desctruturing Objects y Alias 
+__Desestructuracion__ la sintaxis de desestructuracion es una expresion de Javascript que permite desempacar valores de arreglos o propiedades de objetos en distintas variables.
+__alias__ El alias es cuando tenemos una variable ya declarada con el mismo nombre entonces en la desestructuracion podemos cambiarle el nombre
+
+```js 
+const gato = {
+    nome: "Mingau",
+    edad: 3,
+    raza: "Siames",
+    enemigos: ["perros", "agua", "aspiradoras"],
+}
+
+const { nome, edad: age, raza } = gato
+console.log(nome) // Mingau
+console.log(age) // 3
+console.log(raza) // Siames
+```
+## Valor vs Referencia
+__Por valor__ Se copia el valor tal cual 
+* si cambia la copia, no afecta al original number, string, boolean, null, undefined, symbol, bigint
+
+```js 
+let a = 10;
+let b = a;
+
+b = 20;
+
+console.log(a); // 10
+console.log(b); // 20
+```
+
+__Por referencia__ No se el copia el valor, se copia la referencia (direccion en memoria)
+*Si cambias uno, afecta al otro porque apuntan al mismo lugar. Pasa con los arrays, y objetos, funciones
+
+```js 
+let obj1 = { nombre: "Juan" };
+let obj2 = obj1;
+
+obj2.nombre = "Pedro";
+
+console.log(obj1.nombre); // Pedro
+console.log(obj2.nombre); // Pedro
+```
+
+---
+
+## Introduccion al DOM
+---
+_getElementById_ Devuelve una referencia al elemento por su id
+
+```html
+    <h1 id="title">Vinculando JavaScript</h1>
+```
+
+```js
+    const title = document.getElementById("title")
+```
+
+- Podemos agregar, textContent, innerHTML
+
+__querySelector__ Devuelve el primer elemento del documento que coincida con el grupo especificado de selectores
+
+```html
+    <h1 class="title">Vinculando JavaScript</h1>
+```
+
+```js
+    const title = document.querySelector(".title")
+```
+
+- Con . especificamos clases con # especificamos si es id o la propia etiqueta h1
+
+__querySelectorAll__ Agarra todas las concidencias si tenemos muchos divs o parramos con la misma class, o id etc
+
+```html
+<h1 class="title">Este va a ser el titulo</h1>  
+
+<div class="container">
+  <p class="title">Titulo 1</p>
+  <p class="title">Titulo 2</p>
+  <p class="title">Titulo 3</p>
+</div>
+
+<P class="title">parrafo cualquiera</P>
+```
+
+```js
+const title = document.querySelectorAll(".title")
+console.log(title);
+
+```
+
+-Si queremos obtener los de un bloque div tendriamos que poner div .title
+
+
+
+
+---
+
