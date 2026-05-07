@@ -1,5 +1,4 @@
 # Javascript Intermedio
-
 --- 
 ## Template strings o backticks
 
@@ -371,7 +370,148 @@ console.log(title);
 
 -Si queremos obtener los de un bloque div tendriamos que poner div .title
 
+## Create element 
+__createElement__ el metodo document.createElement() crea un elemento HTML especificado por su tagName
 
+```html
+<ul class="lista">
+    <li></li>
+</ul>
+```
+
+```js
+const lista = document.querySelector(".lista");
+const li = document.createElement("li");
+li.textContent = "Producto 1";
+console.log(li)
+
+```
+
+## AppendChild
+__appendChild__ Agrega un nuevo nodo al final de la lista de un elemento padre especificado
+
+```js
+const lista = document.querySelector(".lista");
+const li = document.createElement("li");
+li.textContent = "Producto 2";
+lista.appendChild(li);
+```
+
+## InnerHTHML | reflow
+se genera reflow Ocurre cuando el navegador debe procesar y dibujar parte o la totalidad de una pagina web nuevamente, como despues de una actualizacion en un sitio interactivo 
+
+```js
+const lista = document.querySelector(".lista");
+const paises = ["Argentina", "Brasil", "Peru"]
+
+paises.forEach((pais) => {
+    lista.innerHTML += `<li>${pais}</li>`;
+})
+```
+
+Y append tambien genera reflow peor hay que tener mas cuidado con Inner HTML
+
+```js
+const lista = document.querySelector(".lista");
+const paises = ["Argentina", "Brasil", "Peru"]
+
+paises.forEach(pais => {
+    const li = document.createElement("li");
+    li.textContent = pais;
+    lista.appendChild(li);
+})
+```
+
+## Fragment 
+El fragment de documento no forma parte de la estrcutura de arbol del documento activo los cambios realizas en el fragmento no afectan al documento ni inciden en el rendimiento cuando se realizan cambios
+
+```js
+const lista = document.querySelector(".lista");
+const paises = ["Argentina", "Brasil", "Peru"]
+
+const fragmento = document.createDocumentFragment();
+
+paises.forEach(pais => {
+    const li = document.createElement("li");
+    li.textContent = pais;
+    fragmento.appendChild(li);
+})
+
+lista.appendChild(fragmento);
+```
+
+## InsertBefore y firtsChild
+__InserBefore__ sirve para insertar algo antes de otro elemento 
+__firtsChild__ Sirve para obtener el primer elemento o nodo dentro de otro
+
+```js
+const lista = document.querySelector(".lista");
+const paises = ["Argentina", "Brasil", "Peru"]
+
+const fragmento = document.createDocumentFragment();
+
+paises.forEach(pais => {
+    const newNodo = document.createElement("li");
+    newNodo.textContent = pais;
+    const referenciaNodo = fragmento.firstChild;
+    fragmento.insertBefore(newNodo, referenciaNodo);
+})
+
+lista.appendChild(fragmento);
+```
+
+## Template
+Es un mecanismo para mantener el contenido HTML del lado del cliente que no se renderiza cuando se carga una pagina. Piensa en la plantilla como un fragmento del contenido que esta siendo almacenado para un uso posterior en el documento. 
+
+```html
+ <ul class="ullista"></ul>
+
+    <template id="templateLi">
+        <li class="lista">
+            <b>pais:</b>
+            <span class="text-primary">Aqui va el pais: </span>
+        </li>
+    </template>
+```
+
+```js
+const templateLi = document.getElementById("templateLi");
+const ullista = document.querySelector(".ullista");
+
+const paises = ["Argentina", "Brasil", "Chile", "Uruguay"];
+const fragment = document.createDocumentFragment();
+
+
+paises.forEach((pais) => {
+const clone = templateLi.content.cloneNode(true);
+ clone.querySelector(".text-primary").textContent = pais;
+   fragment.appendChild(clone);
+})
+
+ullista.appendChild(fragment);
+```
+
+## FirtsElementChild
+
+```js
+const bloqueInvisible = document.getElementById("bloqueInvisible");
+const listaUl = document.getElementById("listaUl");
+
+const paises = ["Argentina", "Brasil", "Peru", "Colombia", "Chile"];
+const fragment = document.createDocumentFragment();
+
+const clickPais = () => console.log("Hiciste click en un pais");
+
+paises.forEach((pais) => {
+    const clone = bloqueInvisible.content.firstElementChild.cloneNode(true);
+    clone.querySelector(".text-primary").textContent = pais;
+    clone.addEventListener("click", clickPais);
+
+    fragment.appendChild(clone);
+})
+
+listaUl.appendChild(fragment);
+```
 
 
 ---

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito compras</title>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    
+  <div class="container py-5">
+
+  <!-- Row centrado -->
+  <div class="row justify-content-center g-4">
+
+    <!-- Tarjeta 1 -->
+    <div class="col-md-3">
+      <div class="card shadow-sm text-center">
+        <div class="card-body">
+          <h3 class="card-title">🍓 Frutilla</h3>
+          <button 
+            class="btn btn-danger w-75" id="botonFruta" data-fruta="frutilla">
+            Agregar
+          </button>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Tarjeta 2 -->
+    <div class="col-md-3">
+      <div class="card shadow-sm text-center">
+        <div class="card-body">
+
+          <h3 class="card-title">🍌 Banana</h3>
+
+          <button 
+            class="btn btn-warning w-75" id="botonFruta" data-fruta="banana">
+            Agregar
+          </button>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Tarjeta 3 -->
+    <div class="col-md-3">
+      <div class="card shadow-sm text-center">
+        <div class="card-body">
+
+          <h3 class="card-title">🍑 Ciruela</h3>
+
+          <button 
+            class="btn btn-primary w-75" id="botonFruta" data-fruta="ciruela">
+            Agregar
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- TABLA -->
+  <div class="container mt-5">
+
+    <h2 class="mb-4 text-center">🛒 Carrito de Compras</h2>
+
+    <table class="table table-bordered table-striped text-center">
+      <thead class="table-dark">
+        <tr>
+          <th>Producto</th>
+          <th>Cantidad</th>
+        </tr>
+      </thead>
+
+      <tbody id="carritoBody">
+      
+      </tbody>
+    </table>
+
+  </div>
+
+  <template id="templateProducts">
+    <tr>
+        <td class="name">Frutilla</td>
+        <td class="quantity">0</td>
+    </tr>
+</template>
+
+</div>
+
+    <script src="../javascript/carritoCompras.js"></script>
+</body>
+</html>
