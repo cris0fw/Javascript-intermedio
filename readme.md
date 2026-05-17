@@ -512,7 +512,436 @@ paises.forEach((pais) => {
 
 listaUl.appendChild(fragment);
 ```
+---
 
+## Arrays 
 
 ---
+Estos metodos no mutan el array original, sino que nos devuelve una copia
+
+__map__ Itera sobre cada elemento de un arreglo y devuelve un nuevo arreglo que contiene los resultados de llamar a la funcion callback en cada elemento. Esto lo hace sin mutar al arreglo original.
+
+```js
+const usuarios = [
+    {
+        name: "Cristian",
+        edad: 26,
+        email: "crisludue5@gmail.com"
+    },
+    {
+        name: "Micaela",
+        edad: 19, 
+        email: "micamoser06@gmail.com"
+    },
+    {
+        name: "Federico",
+        edad: 28,
+        email: "fedealba@gmail.com"
+    }
+]
+
+const obtenerUsuario = usuarios.map((user) => {
+    return user.name
+})
+
+console.log(obtenerUsuario)
+```
+
+__Filter__ Sirve para crear un nuevo array con los elementos que cumplen una condicion 
+
+```js
+const usuarios = [
+    {
+        name: "Cristian",
+        edad: 26,
+        email: "crisludue5@gmail.com"
+    },
+    {
+        name: "Micaela",
+        edad: 19, 
+        email: "micamoser06@gmail.com"
+    },
+    {
+        name: "Federico",
+        edad: 28,
+        email: "fedealba@gmail.com"
+    }
+]
+
+const userFiltrado = usuarios.filter((usuario) => usuario.name !== "Federico")
+console.log(userFiltrado)
+```
+
+__find__ El metodo find() devuelve el valor del primer elemento del array que cumple la funcion de prueba proporcionada
+
+```js
+const usuarios = [
+    {
+        id: 1,
+        name: "Cristian",
+        edad: 26,
+        email: "crisludue5@gmail.com"
+    },
+    {
+        id: 2,
+        name: "Micaela",
+        edad: 19, 
+        email: "micamoser06@gmail.com"
+    },
+    {
+        id: 3,
+        name: "Federico",
+        edad: 28,
+        email: "fedealba@gmail.com"
+    }
+]
+
+const buscarUsuario = usuarios.find((usuario) => usuario.id === 1);
+console.log(buscarUsuario);
+```
+
+__some__ El metodo some() comprueba si al menos un elemento del array cumple con la condicion implementada por la funcion proporcionada
+
+```js
+const usuarios = [
+    {
+        id: 1,
+        name: "Cristian",
+        edad: 26,
+        email: "crisludue5@gmail.com"
+    },
+    {
+        id: 2,
+        name: "Micaela",
+        edad: 19, 
+        email: "micamoser06@gmail.com"
+    },
+    {
+        id: 3,
+        name: "Federico",
+        edad: 28,
+        email: "fedealba@gmail.com"
+    }
+]
+
+const existe = usuarios.some((usuarios) => usuarios.id === 1);
+console.log(existe);
+```
+__findIndex__ El metodo findIndex() devuelve el indice del primer elemento de un array que cumpla una funcion de prueba proporcionada. En caso contrario devuelve -1
+
+```js
+const usuarios = [
+    {
+        id: 1,
+        name: "Cristian",
+        edad: 26,
+        email: "crisludue5@gmail.com"
+    },
+    {
+        id: 2,
+        name: "Micaela",
+        edad: 19, 
+        email: "micamoser06@gmail.com"
+    },
+    {
+        id: 3,
+        name: "Federico",
+        edad: 28,
+        email: "fedealba@gmail.com"
+    }
+]
+
+const indice = usuarios.findIndex((usuario) => usuario.id === 2);
+console.log(indice);
+```
+
+__Slice__ El metodo slice() devuelve una copia de una parte del array dentro de un nuevo array empezando por inicio hasta fin (fin no incluido). El array original no se modificara
+array -> [nombre1, nombre2, nombre3, nombre3]
+inicio -> desde donde empieza indice 0, 1,2,3 etc
+fin -> donde termina elegis que empiece del 1, nombre2 y si decis que se termina en 2, no se cuenta el 2, es hasta 0,1, si elegis 3, entonces no se cuenta el 3, seria 0,1,2
+
+```js
+const arr = ["Junior", "Juliarts", "Oso", "Luna"]
+const nuevoArray = arr.slice(1,2);
+console.log(nuevoArray)
+```
+
+__concat__ el metodo concat se usa para unir dos o mas arrays. Este metodo no cambia los arrays existentes. Sino que devuelve un solo array
+
+```js
+const array1 = [1, 2, 3, 4, 5];
+const array2 = [6, 7, 8, 9, 10];
+const array3 = array1.concat(array2);
+console.log(array3);
+```
+
+__Spread Operator__ Permite a un elemento iterable tal como un arreglo o cadena ser expandido en lugares donde son esperados
+
+```js
+const array1 = [1, 2, 3, 4, 5];
+const array2 = [6, 7, 8, 9, 10];
+const array3 = [...array1, ...array2];
+console.log(array3); 
+```
+
+__reduce__ El metodo reduce ejecuta una funcion reductora sobre cada elemento de un array desolviendo como resultado un unico valor 
+acomulador = 0 + valorActual = 1 
+acomulador = 1 + valorActual = 2
+acomulador = 3 + valorActual = 3
+acomulador = 6 + valorActual = 4
+acomulador = 10 + valorActual = 5
+
+```js
+const array1 = [1, 2, 3, 4, 5];
+const resultado = array1.reduce((acumulador, valorActual) => acumulador + valorActual, 0);
+console.log(resultado); 
+```
+
+__Split__ El metodo split() divide un objeto de tipo string en un array mediante un separador
+
+```js
+const cadenaMeses = "Enero,Febrero,Marzo,Abril,Mayo,Junio,Julio,Agosto,Septiembre,Octubre,Noviembre,Diciembre";
+const arrayMeses = cadenaMeses.split(",");
+console.log(arrayMeses);
+```
+
+__join__ El metodo join convierte un array en una cadena de texto dividiendolo por , o - 
+
+```js
+const array = [1,2,3,4,5]
+const convertirString = array.join(",")
+console.log(convertirString)
+```
+---
+
+## Dom Parte 2
+
+---
+## El burbujeo y la captura
+El burbujeo y la captura de eventos son dos mecanismos que describen lo que sucede cuando dos controladores del mismo tipo de evento se activan en un elemento.
+
+```html
+  <div class="container">
+    <div class="border border-primary border-5 py-5 m-3">
+        lorem, ipsum dolor 
+        <div class="border border-secondary border-5 py-5 m-3">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, voluptate.
+            <div class="border border-danger border-5 py-5 m-3">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, voluptate.
+            </div>
+        </div>
+    </div>
+  </div>
+```
+---
+
+Esto sucede cuando hacemos un addEventListener y se propaga de abajo hacia arriba del elemento nieto al elemento padre 
+
+```js
+const padre = document.querySelector(".border-primary");
+const hijo = document.querySelector(".border-secondary");
+const nieto = document.querySelector(".border-danger");
+
+padre.addEventListener("click", (e) => {
+    console.log("Padre");
+})
+
+hijo.addEventListener("click", (e) => {
+    console.log("Hijo");
+})
+
+nieto.addEventListener("click", (e) => {
+    console.log("Nieto");
+})
+```
+---
+
+## stopPropagation
+Evita la propagacion adicional del evento actual en las fases de captura y bubbling 
+e.stopProgation()
+
+```js
+const border = document.querySelectorAll(".border"); 
+
+border.forEach((element) => {
+    element.addEventListener("click", (e) => {
+        e.stopPropagation()
+        console.log("Me diste click")
+    })
+})
+```
+---
+
+## Delegacion de eventos
+La delegacion de eventos es basicamente un patron para manejar eventos de manera eficiente en lugar de agregar un detector de eventos a todos y cada uno de los elementos similares, podemos agregar un detector de eventos a un elemento principal y llamar a un evento en un objetivo particular utilizando la propiedad .target del objeto del evento. 
+
+```html
+  <div class="container">
+    <div class="border border-primary border-5 py-5 m-3" id="padre" data-div="padre">
+        lorem, ipsum dolor 
+        <div class="border border-secondary border-5 py-5 m-3" id="hijo" data-div="hijo">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, voluptate.
+            <div class="border border-danger border-5 py-5 m-3" id="nieto" data-div="nieto">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, voluptate.
+            </div>
+        </div>
+    </div>
+  </div>
+```
+
+TENEMOS 3 METODOS PARA HACERLO
+
+```js
+const container = document.querySelector(".container");
+
+container.addEventListener("click", (e) => {
+    //Accedo mediante el ID al hijo 
+    if (e.target.id === "hijo") {
+        console.log("Hiciste click en el hijo");
+    }
+
+    //Accedo mediante la clase 
+    if(e.target.matches(".border-primary")){
+        console.log("Hiciste click en el padre")
+    }
+
+    //Accedo mediante el data set 
+    if(e.target.dataset.div === "nieto"){
+        console.log("Hiciste click en el nieto")
+    }
+})
+```
+---
+
+## Formularios
+
+---
+## Expresiones regulares
+Las expresiones regulares (a menudo llamadas RegExp o RegEx) son patrones que se utilizan para hacer coincidir combinaciones de caracteres en cadenas
+
+__Exp. Regular: No acepta mayusculas__
+
+```js
+const regex = /^[a-z]+$/;
+console.log(regex.test("acepta minisculas")); 
+```
+
+__Exp. Regular: No acepte minisculas__
+```js
+const regex = /^[^a-z]+$/;
+console.log(regex.test("ACEPTA MAYUSCULAS")); 
+```
+
+__Exp. Regular: No acepta simbolos, signos, espacios, guiones, rayas__
+```js
+const regex = /^[a-zA-Z0-9]+$/;
+console.log(regex.test("cris24"))
+```
+
+__Exp. Regular: Para que tome correos con terminacion de gmail.com__
+```js
+const regex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+console.log(regex.test("ludmila14@gmail.com"))
+```
+
+__Exp. Regular: Para que tome correos electronicos con cualquier terminacion__
+```js
+const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+console.log(regex.test("cris@gmail.com"))
+```
+
+__Exp. Regular: Para validar una edad determinada del 1 al 100 sin caracteres__
+```js
+const regex = /^(100|[1-9][0-9]?)$/;
+console.log(regex.test(69))
+```
+
+## Validacion de formulacion 
+```html
+<form id="formulario">
+    <input 
+        type="text"
+        name="username" 
+        placeholder="username" 
+        autocomplete="off" 
+        id="username"
+        required
+        minlength="3"
+        maxlength="10"
+        pattern="/^[a-zA-Z0-9]+$/"
+    />
+    <input 
+        type="email"
+        name="email" 
+        placeholder="email"
+        autocomplete="off"
+            d="email"
+        required
+         pattenr="/^[^\s@]+@[^\s@]+\.[^\s@]+$/"
+    />
+    <button type="submit">Enviar</button>
+</form>
+```
+Javascript
+```js
+const formulario = document.getElementById("formulario");
+
+const username = document.getElementById("username");
+const email = document.getElementById("email");
+
+const expRegUsername = /^[a-zA-Z0-9]+$/; 
+const expRegEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+const fragment = document.createDocumentFragment();
+
+formulario.addEventListener("submit", (e) => {
+    e.preventDefault(); 
+
+    if(!expRegUsername.test(username.value)){
+        console.log("username no valido")
+        return
+    }
+
+    if(!expRegEmail.test(email.value)){
+        console.log("email no valido")
+        return
+    }
+
+    console.log("Formulario enviado correctamente")
+
+})
+```
+
+## Formdata
+```js
+const formulario = document.getElementById("formulario");
+
+const expRegUsername = /^[a-zA-Z0-9]+$/; 
+const expRegEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+const fragment = document.createDocumentFragment();
+
+formulario.addEventListener("submit", (e) => {
+    e.preventDefault(); 
+
+    const formData = new FormData(formulario);
+    const username = formData.get("username");
+    const email = formData.get("email");
+
+    if(!expRegUsername.test(username)){
+        console.log("Username no valido")
+        return 
+    }
+
+    if(!expRegEmail.test(email)){
+        console.log("Email no valido")
+        return
+    }
+
+    console.log("Formulario enviado correctamente")
+})
+```
+---
+
+
 

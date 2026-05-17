@@ -36,8 +36,6 @@ const pintarCarrito = (carrito) => {
   carritoBody.appendChild(fragment);
 }
 
-
-
 botonFruta.forEach((boton) => {
   boton.addEventListener("click", agregarCarrito);
 })

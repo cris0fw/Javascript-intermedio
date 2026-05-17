@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carrito compras v3</title>
+    <link rel="stylesheet" href="../estilos/home.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="icontitle">
+          <i id="menu" class="fa-solid fa-bars icon"></i>
+
+          <div class="logotitle">
+            <img src="../images//logo.png" alt="logo" />
+            <h2>Stripe</h2>
+          </div>
+        </div>
+
+        <div class="navMobile">
+          <div class="navMobileContent">
+            <a href="#">Shop</a>
+            <a href="#">Categories</a>
+            <a href="#">New Arrivals</a>
+            <a href="#">Sale</a>
+            <a href="#">About</a>
+          </div>
+        </div>
+
+        <i class="fa-solid fa-cart-shopping icon"></i>
+      </nav>
+    </header>
+
+    <main>
+      <div class="contenidoMain">
+        <div>
+          <p>New collection 2032</p>
+        </div>
+        <div class="titles">
+          <h1 class="white">Step into</h1>
+          <h1 class="orange">Your Best</h1>
+        </div>
+
+        <p class="description">
+          Premium footwear for every step of your journey. From Athletic
+          performance to everyday comfort.
+        </p>
+
+        <div class="buttons">
+          <button class="buttonOrange">Shop Now</button>
+          <button class="buttonOutline">Browse Categories</button>
+        </div>
+      </div>
+
+      <img src="../images/imagenZapa.jpg" alt="image main" />
+    </main>
+
+    <section class="sectionfilter">
+      <div class="contentFilter">
+        <h1 class="filterTitle">Shop By category</h1>
+        <p class="description">Find the perfect pair for every ocassion</p>
+        <a href="#">View all ></a>
+      </div>
+      <div class="containerFilter">
+        <div class="cardFilter">
+          <img src="../images/producto1.jpg" alt="img filter 1" />
+          <div class="productsfilter">
+            <p class="tag">48 products</p>
+            <h2>Running</h2>
+            <p class="cardfilterdesc">
+              Performance Shoes Built for speed and endurence
+            </p>
+            <a href="#">Shop Now</a>
+          </div>
+        </div>
+
+        <div class="cardFilter">
+          <img src="../images/producto2.jpg" alt="img filter 1" />
+          <div class="productsfilter">
+            <p class="tag">88 products</p>
+            <h2>Sneakers</h2>
+            <p class="cardfilterdesc">
+              Classic and contemporary streetwear styles
+            </p>
+            <a href="#">Shop Now</a>
+          </div>
+        </div>
+
+        <div class="cardFilter">
+          <img src="../images/producto3.jpg" alt="img filter 1" />
+          <div class="productsfilter">
+            <p class="tag">32 products</p>
+            <h2>Basketball</h2>
+            <p class="cardfilterdesc">
+              Court-ready shoes with superior ankle support
+            </p>
+            <a href="#">Shop Now</a>
+          </div>
+        </div>
+
+        <div class="cardFilter">
+          <img src="../images/producto4.jpg" alt="img filter 1" />
+          <div class="productsfilter">
+            <p class="tag">28 products</p>
+            <h2>Boots</h2>
+            <p class="cardfilterdesc">Rugged style for any terrain</p>
+            <a href="#">Shop Now</a>
+          </div>
+        </div>
+
+        <div class="cardFilter">
+          <img src="../images/producto6.jpg" alt="img filter 1" />
+          <div class="productsfilter">
+            <p class="tag">24 products</p>
+            <h2>Sandals</h2>
+            <p class="cardfilterdesc">Breathable comfort for warmer days</p>
+            <a href="#">Shop Now</a>
+          </div>
+        </div>
+
+        <div class="cardFilter">
+          <img src="../images/producto7.jpg" alt="img filter 1" />
+          <div class="productsfilter">
+            <p class="tag">64 products</p>
+            <h2>Casual</h2>
+            <p class="cardfilterdesc">
+              Everyday comfort meets effortless style
+            </p>
+            <a href="#">Shop Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sectionProducts">
+      <div class="contentProducts">
+        <h1>Featured Collection</h1>
+        <p>Our most popular styles handpicked for you</p>
+        <a href="#">View All Featured ></a>
+      </div>
+
+      <div class="containerProducts"></div>
+    </section>
+
+    <!-- ACA VA A ESTAR EL TEMPLATE DEL PRODUCT -->
+    <template id="templateproduct">
+      <div class="cardProduct">
+        <img src="../images/producto1.jpg" alt="producto 1" />
+        <div class="contentTitlecontent">
+          <h3>Running</h3>
+          <div class="contenticonprice">
+            <i class="fa-solid fa-star"></i>
+            <p>4.9</p>
+          </div>
+        </div>
+
+        <div>
+          <h2>Velocity Runner Pro</h2>
+          <p>$179</p>
+        </div>
+
+        <button>Agregar</button>
+      </div>
+    </template>
+
+    <script src="../javascript/carritoComprasv3.js"></script>
+  </body>
+</html>
