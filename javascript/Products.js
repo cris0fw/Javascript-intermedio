@@ -1,0 +1,60 @@
+const allProducts = [
+  {
+    id: 1,
+    image: "producto1.jpg",
+    tag: "Running",
+    range: 4.9,
+    title: "Velocity Runner Pro",
+    price: 179,
+  },
+  {
+    id: 2,
+    image: "producto2.jpg",
+    tag: "Sneakers",
+    range: 4.8,
+    title: "Streewise Classic",
+    price: 129,
+  },
+  {
+    id: 3,
+    image: "producto3.jpg",
+    tag: "Basketball",
+    range: 4.7,
+    title: "Court Dominator X",
+    price: 199,
+  },
+  {
+    id: 4,
+    image: "producto4.jpg",
+    tag: "Boots",
+    range: 4.8,
+    title: "Trail Blazer GTX",
+    price: 189,
+  },
+  {
+    id: 5,
+    image: "producto5.jpg",
+    tag: "Running",
+    range: 4.9,
+    title: "Marathon Elite",
+    price: 249,
+  },
+  {
+    id: 6,
+    image: "producto6.jpg",
+    tag: "Sandals",
+    range: 4.8,
+    title: "Cloud 9 Recovery",
+    price: 59,
+  },
+  {
+    id: 7,
+    image: "producto7.jpg",
+    tag: "Sneakers",
+    range: 4.5,
+    title: "Court Legaxy Low",
+    price: 99,
+  },
+];
+
+export default allProducts;

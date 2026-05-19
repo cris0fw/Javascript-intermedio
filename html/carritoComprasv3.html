@@ -32,7 +32,17 @@
           </div>
         </div>
 
-        <i class="fa-solid fa-cart-shopping icon"></i>
+        <input type="checkbox" id="cart-toggle" />
+
+        <!-- Icono carrito -->
+        <label for="cart-toggle">
+          <i class="fa-solid fa-cart-shopping icon cartIcon"></i>
+        </label>
+
+        <!-- Carrito -->
+        <div class="cart">
+          <h3>Mi carrito</h3>
+        </div>
       </nav>
     </header>
 
@@ -64,7 +74,7 @@
       <div class="contentFilter">
         <h1 class="filterTitle">Shop By category</h1>
         <p class="description">Find the perfect pair for every ocassion</p>
-        <a href="#">View all ></a>
+        <a href="#" id="all">View all ></a>
       </div>
       <div class="containerFilter">
         <div class="cardFilter">
@@ -75,7 +85,7 @@
             <p class="cardfilterdesc">
               Performance Shoes Built for speed and endurence
             </p>
-            <a href="#">Shop Now</a>
+            <a id="botondefiltro" href="#">Shop Now</a>
           </div>
         </div>
 
@@ -87,7 +97,7 @@
             <p class="cardfilterdesc">
               Classic and contemporary streetwear styles
             </p>
-            <a href="#">Shop Now</a>
+            <a id="botondefiltro" href="#">Shop Now</a>
           </div>
         </div>
 
@@ -99,7 +109,7 @@
             <p class="cardfilterdesc">
               Court-ready shoes with superior ankle support
             </p>
-            <a href="#">Shop Now</a>
+            <a id="botondefiltro" href="#">Shop Now</a>
           </div>
         </div>
 
@@ -109,7 +119,7 @@
             <p class="tag">28 products</p>
             <h2>Boots</h2>
             <p class="cardfilterdesc">Rugged style for any terrain</p>
-            <a href="#">Shop Now</a>
+            <a id="botondefiltro" href="#">Shop Now</a>
           </div>
         </div>
 
@@ -119,7 +129,7 @@
             <p class="tag">24 products</p>
             <h2>Sandals</h2>
             <p class="cardfilterdesc">Breathable comfort for warmer days</p>
-            <a href="#">Shop Now</a>
+            <a id="botondefiltro" href="#">Shop Now</a>
           </div>
         </div>
 
@@ -131,7 +141,7 @@
             <p class="cardfilterdesc">
               Everyday comfort meets effortless style
             </p>
-            <a href="#">Shop Now</a>
+            <a id="botondefiltro" href="#">Shop Now</a>
           </div>
         </div>
       </div>
@@ -146,6 +156,27 @@
 
       <div class="containerProducts"></div>
     </section>
+
+    <!-- ACA VA A ESTAR EL TEMPLATE DEL CARRITO DE PRODUCTOS -->
+    <template id="templatecart">
+      <div class="itemsCart">
+        <div class="cart-item">
+          <img src="../images/producto1.jpg" alt="producto" />
+
+          <div class="cartProduct">
+            <p>Producto 1</p>
+
+            <div class="cartButtons">
+              <button class="agregar">+</button>
+              <p>1</p>
+              <button class="restar">-</button>
+            </div>
+
+            <span>$120</span>
+          </div>
+        </div>
+      </div>
+    </template>
 
     <!-- ACA VA A ESTAR EL TEMPLATE DEL PRODUCT -->
     <template id="templateproduct">
@@ -164,10 +195,10 @@
           <p>$179</p>
         </div>
 
-        <button>Agregar</button>
+        <button class="agregarCart">Agregar</button>
       </div>
     </template>
 
-    <script src="../javascript/carritoComprasv3.js"></script>
+    <script type="module" src="../javascript/carritoComprasv3.js"></script>
   </body>
 </html>
