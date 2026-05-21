@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>register</title>
+    <link rel="stylesheet" href="../estilos/register.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="icontitle">
+          <i id="menu" class="fa-solid fa-bars icon"></i>
+
+          <div class="logotitle">
+            <img src="../images//logo.png" alt="logo" />
+            <h2>Stripe</h2>
+          </div>
+        </div>
+
+        <div class="navMobile">
+          <div class="navMobileContent">
+            <a href="#">Shop</a>
+            <a href="#">Categories</a>
+            <a href="#">New Arrivals</a>
+            <a href="#">Sale</a>
+            <a href="#">About</a>
+          </div>
+        </div>
+
+        <input type="checkbox" id="cart-toggle" />
+
+        <!-- Icono carrito -->
+        <label for="cart-toggle">
+          <i class="fa-solid fa-cart-shopping icon cartIcon"></i>
+        </label>
+
+        <!-- Carrito -->
+        <div class="cart">
+          <h3>Mi carrito</h3>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <form action="" class="form">
+        <h2>Register</h2>
+        <div class="col">
+          <!-- Username -->
+          <div class="row" id="containerUsername">
+            <input
+              id="username"
+              type="text"
+              placeholder="username"
+              name="username"
+            />
+          </div>
+
+          <!-- Numero de telefono -->
+          <div class="row" id="containerPhone">
+            <input
+              type="number"
+              id="telefono"
+              placeholder="Your number phone"
+            />
+          </div>
+        </div>
+        <div class="col">
+          <!-- Email -->
+          <div class="row">
+            <input type="email" placeholder="email" />
+          </div>
+          <!-- Pais -->
+          <div class="row">
+            <select name="country" id="country">
+              <option value="default">Select your country</option>
+              <option value="Argetina">Argentina</option>
+              <option value="Argetina">Uruguay</option>
+              <option value="Argetina">Bolivia</option>
+              <option value="Argetina">Peru</option>
+              <option value="Argetina">Venezuela</option>
+              <option value="Argetina">Colombia</option>
+            </select>
+          </div>
+        </div>
+        <div class="col">
+          <!-- Password -->
+          <div class="row">
+            <input type="text" placeholder="password" name="password" />
+          </div>
+
+          <!-- confirmacion de password -->
+          <div class="row">
+            <input
+              type="text"
+              placeholder="Confirm Password"
+              name="confirmPassword"
+            />
+          </div>
+        </div>
+        <button class="btn" type="submit">Register</button>
+      </form>
+    </main>
+
+    <script src="../javascript/carritoComprasv3.js"></script>
+    <script src="../javascript/validacionFormulario.js"></script>
+  </body>
+</html>

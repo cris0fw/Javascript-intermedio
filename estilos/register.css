@@ -1,0 +1,446 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* SECCION DEL HEADER */
+header {
+  width: 100%;
+  background-color: #030712;
+  border-bottom: 1px solid #7b7a80;
+}
+header .icon {
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+}
+nav .icontitle {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 10px 30px;
+}
+
+nav h2 {
+  font-size: 24px;
+  color: #fff;
+  font-weight: bold;
+}
+.navMobileContent {
+  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.navMobile a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  padding: 4px 7px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.navMobile a:hover {
+  color: #fb8c35;
+  transition: all 0.3s ease-in-out;
+}
+.icontitle .fa-bars {
+  display: none;
+}
+.logotitle {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+#cart-toggle {
+  display: none;
+}
+
+/* carrito */
+.cart {
+  position: absolute;
+  top: 80px;
+  right: 20px;
+
+  width: 320px;
+  background: #030712;
+  color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+
+  transition: 0.3s;
+}
+
+.nohayproducts {
+  font-size: 20;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.total {
+  font-size: 20px;
+  color: #fff;
+}
+
+/* mostrar carrito */
+#cart-toggle:checked ~ .cart {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.cart h3 {
+  margin-bottom: 20px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.cart-item img {
+  width: 35%;
+  height: 100px;
+  border-radius: 5px;
+}
+
+.cartButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0px;
+}
+
+.cartButtons button {
+  padding: 5px 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  background-color: #fb8c35;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+  font-weight: 600;
+}
+
+.finalizarCompra {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: #fb8c35;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* SECCION DEL MAIN */
+main {
+  width: 100%;
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at bottom right,
+      rgba(251, 140, 53, 0.15),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at bottom left,
+      rgba(251, 140, 53, 0.1),
+      transparent 40%
+    ),
+    #030712;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 60px 25px;
+}
+
+.form {
+  width: 50%;
+  padding: 40px 20px;
+  background:
+    radial-gradient(circle at top left, #4b5563 0%, transparent 40%),
+    radial-gradient(circle at bottom right, #1f2937 0%, transparent 40%),
+    linear-gradient(135deg, #2d3748, #1a202c);
+
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+  border-radius: 15px;
+}
+
+.form h2 {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+input {
+  width: 100%;
+  padding: 14px 16px;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.validacion {
+  font-size: 12px;
+  margin-top: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0px 5px;
+}
+
+.rojo {
+  color: #ff4d4d;
+}
+
+.verde {
+  color: #4dff4d;
+}
+
+input:focus {
+  border-color: var(--orange-primary);
+  box-shadow: 0 0 12px rgba(255, 107, 0, 0.25);
+  background: rgba(0, 0, 0, 0.4);
+}
+
+select {
+  width: 100%;
+  padding: 14px 16px;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.col {
+  display: flex;
+  flex-direction: row;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  justify-content: start;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+.btn {
+  width: 50%;
+  padding: 14px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  background-color: #fb8c35;
+  color: #fff;
+  display: block;
+  margin: 30px auto 0;
+}
+
+/* PARA TABLET */
+@media (max-width: 815px) {
+  nav {
+    padding: 5px 30px;
+  }
+
+  .navMobile {
+    display: none;
+    position: absolute;
+    top: 77px;
+    min-height: calc(100% + 240px);
+    background-color: #030712;
+    width: 100%;
+    left: 0px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .navMobileContent {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .navMobile a {
+    padding: 10px 40px;
+  }
+
+  .icontitle .fa-bars {
+    display: block;
+  }
+}
+
+/* PARA MOBILE */
+@media (max-width: 390px) {
+  nav {
+    padding: 5px 30px;
+  }
+  nav .icontitle {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .icontitle .fa-bars {
+    display: block;
+  }
+
+  /* SECCION DEL FORMULARIO  */
+  main {
+    width: 100%;
+    min-height: 100vh;
+    background:
+      radial-gradient(
+        circle at bottom right,
+        rgba(251, 140, 53, 0.15),
+        transparent 40%
+      ),
+      radial-gradient(
+        circle at bottom left,
+        rgba(251, 140, 53, 0.1),
+        transparent 40%
+      ),
+      #030712;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 60px 25px;
+  }
+
+  .form {
+    width: 100%;
+    padding: 20px 20px;
+    background:
+      radial-gradient(circle at top left, #4b5563 0%, transparent 40%),
+      radial-gradient(circle at bottom right, #1f2937 0%, transparent 40%),
+      linear-gradient(135deg, #2d3748, #1a202c);
+
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+  }
+
+  .form h2 {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 28px;
+    text-align: center;
+  }
+
+  input {
+    width: 100%;
+    padding: 14px 16px;
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s ease;
+  }
+
+  input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+  }
+
+  input:focus {
+    border-color: var(--orange-primary);
+    box-shadow: 0 0 12px rgba(255, 107, 0, 0.25);
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  select {
+    width: 100%;
+    padding: 14px 16px;
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s ease;
+  }
+
+  .col {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .row {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    align-items: start;
+    justify-content: start;
+    margin-top: 10px;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 14px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+    background-color: #fb8c35;
+    color: #fff;
+    margin-top: 10px;
+  }
+}
