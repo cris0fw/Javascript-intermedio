@@ -10,7 +10,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
   </head>
-  <body>
+  <body id="body">
     <header>
       <nav>
         <div class="icontitle">
@@ -71,34 +71,40 @@
         </div>
         <div class="col">
           <!-- Email -->
-          <div class="row">
-            <input type="email" placeholder="email" />
+          <div class="row" id="containerEmail">
+            <input id="email" type="email" placeholder="email" />
           </div>
           <!-- Pais -->
-          <div class="row">
+          <div class="row" id="containerCountry">
             <select name="country" id="country">
               <option value="default">Select your country</option>
-              <option value="Argetina">Argentina</option>
-              <option value="Argetina">Uruguay</option>
-              <option value="Argetina">Bolivia</option>
-              <option value="Argetina">Peru</option>
-              <option value="Argetina">Venezuela</option>
-              <option value="Argetina">Colombia</option>
+              <option value="Argentina">Argentina</option>
+              <option value="Uruguay">Uruguay</option>
+              <option value="Bolivia">Bolivia</option>
+              <option value="Peru">Peru</option>
+              <option value="Venezuela">Venezuela</option>
+              <option value="Colombia">Colombia</option>
             </select>
           </div>
         </div>
         <div class="col">
           <!-- Password -->
-          <div class="row">
-            <input type="text" placeholder="password" name="password" />
+          <div class="row" id="containerPassword">
+            <input
+              id="password"
+              type="password"
+              placeholder="password"
+              name="password"
+            />
           </div>
 
           <!-- confirmacion de password -->
-          <div class="row">
+          <div class="row" id="containerRePassword">
             <input
-              type="text"
+              type="password"
               placeholder="Confirm Password"
               name="confirmPassword"
+              id="rePassword"
             />
           </div>
         </div>
