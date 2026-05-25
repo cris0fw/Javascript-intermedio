@@ -1029,6 +1029,9 @@ formulario.addEventListener("submit", (e) => {
   const username = formData.get("username");
   const email = formData.get("email");
 
+  // Segunda forma de acceder a los elementos
+  const [username, email] = [...formData.values()]
+
   if (!expRegUsername.test(username)) {
     console.log("Username no valido");
     return;
